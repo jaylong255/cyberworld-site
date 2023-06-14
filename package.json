@@ -15,7 +15,7 @@
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "quick": "npm run lint && npm run typecheck && npm run test",
     "build-dev": "vite build",
-    "deploy": "vite build && aws s3 sync dist/ s3://cyberworld-site-dev --delete"
+    "deploy": "vite build && aws s3 sync dist/ s3://cyberworld-assets-dev --delete && aws cloudfront create-invalidation --distribution-id E2D0MRH5AL47OF --paths '/*'"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
