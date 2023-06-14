@@ -169,6 +169,8 @@ function Home() {
             <Typography variant="body1" component={Link} to="tel:256-673-7112">
               (256)673-7112
             </Typography>
+
+            <Typography variant="heading_1_bold">Special Elite font test</Typography>
           </Box>
         </Box>
       </Box>
