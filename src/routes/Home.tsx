@@ -13,7 +13,7 @@ function Home() {
         // background color not quite black but almost
         background: "#181818",
         width: "100%",
-        minHeight: "100vh",
+        // minHeight: "100vh",
         // border: "2px solid blue",
       }}
     >
@@ -21,31 +21,32 @@ function Home() {
         sx={{
           margin: "none",
           padding: "none",
-          // border: "none",
-          background: "#181818",
+          border: "none",
+          // background: "red",
           // border: "2px solid yellow",
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
-          height: "100%",
-          minHeight: "100vh",
+          // height: "100%",
+          width: "100%",
+          // minHeight: "100vh",
         }}
       >
         <Box // vertical alignment container
           sx={{
             margin: "32px",
             padding: "none",
-            // border: "none",
+            border: "none",
             background: "#181818",
-            // border: "2px solid yellow",
+            minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
-            // justifyContent: "center",
           }}
         >
           <Box // cyberworld logo container
             sx={{
-              margin: "0px 0px 0px 12px",
+              margin: "0px 0px 0px 0px",
+
             }}
           >
             <CyberWorldLogo />
