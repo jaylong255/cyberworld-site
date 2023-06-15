@@ -39,6 +39,8 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.8.0",
     "snakecase-keys": "^5.4.5",
+    "typeface-special-elite": "^1.1.13",
+    "typeface-ubuntu": "^1.1.13",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
