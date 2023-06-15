@@ -4,6 +4,10 @@ run-name: ${{ github.actor }} has triggered a DEV deployment
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+    paths-ignore:
+        - 'README.md'
+        - '.github/**'
+        - 'terraform/**'
     branches:
       - main
 
