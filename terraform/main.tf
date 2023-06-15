@@ -23,6 +23,7 @@ provider "aws" {
     region = "us-west-1"
 }
 
+# test
 resource "aws_s3_bucket" "cyberworld-site" {
     bucket = "cyberworld-site"
 }

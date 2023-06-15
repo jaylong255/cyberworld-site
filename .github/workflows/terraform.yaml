@@ -3,11 +3,13 @@ on:
   push:
     paths:
       - 'terraform/**'
+      - '.github/workflows/terraform.yaml'
     branches:
       - main
   pull_request:
     paths:
       - 'terraform/**'
+      - '.github/workflows/terraform.yaml'
     branches:
       - main
 
