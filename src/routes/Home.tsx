@@ -170,7 +170,7 @@ function Home() {
               (256)673-7112
             </Typography>
 
-            <Typography variant="heading_1_bold">Special Elite font test</Typography>
+            {/* <Typography variant="heading_1_bold">Special Elite font test</Typography> */}
           </Box>
         </Box>
       </Box>
