@@ -46,12 +46,10 @@ function Home() {
           <Box // cyberworld logo container
             sx={{
               margin: "0px 0px 0px 0px",
-
             }}
           >
             <CyberWorldLogo />
           </Box>
-          
 
           {/* <Typography
             sx={{
@@ -116,7 +114,11 @@ function Home() {
                 padding: "none",
               }}
             >
-              <Link to="https://github.com/jaylong255">
+              <Link
+                to="https://github.com/jaylong255"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <GitHubLogo />
               </Link>
             </Box>
@@ -127,7 +129,11 @@ function Home() {
                 padding: "none",
               }}
             >
-              <Link to="https://twitter.com/cyberbuilders">
+              <Link
+                to="https://twitter.com/cyberbuilders"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <TwitterLogo />
               </Link>
             </Box>
@@ -138,11 +144,14 @@ function Home() {
                 padding: "none",
               }}
             >
-              <Link to="https://www.upwork.com/freelancers/jaylongcyberworld">
+              <Link
+                to="https://www.upwork.com/freelancers/jaylongcyberworld"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <UpworkLogo />
               </Link>
             </Box>
-            
           </Box>
 
           <Box // contact info container
