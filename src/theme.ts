@@ -1,4 +1,6 @@
 import { createTheme } from "@mui/material/styles";
+import "typeface-ubuntu";
+import "typeface-special-elite";
 /* c8 ignore start */
 
 export const COLOR_100 = "#FFFFFF";
