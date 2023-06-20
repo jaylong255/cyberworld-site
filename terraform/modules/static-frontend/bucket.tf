@@ -9,14 +9,21 @@ locals {
 resource "aws_s3_bucket" "bucket" {
   bucket = "${var.project}-${var.environment}-assets-${local.unique_string}"
 
-  website {
-    index_document = "index.html"
-    error_document = "index.html"
-  }
-
   tags = {
     Project     = var.project
     Environment = var.environment
     Terraform   = "true"
+  }
+}
+
+resource "aws_s3_bucket_website_configuration" "bucket" {
+  bucket = aws_s3_bucket.bucket.id
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "index.html"
   }
 }
