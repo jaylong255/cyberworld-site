@@ -1,7 +1,6 @@
-
-
 locals {
-  unique_string = "${timestamp()}"
+  // Generate a unique string for the bucket name.
+  unique_string = substr(replace(sha1("${var.project}-${var.environment}-assets"), "/[^a-z0-9]/", ""), 0, 8) // substring of the hash of the primary segment of the bucket name
 }
 
 # Bucket for static site builds.
@@ -15,8 +14,8 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
-# ACL for the bucket.
-resource "aws_s3_bucket_acl" "bucket" {
-  bucket = "${aws_s3_bucket.bucket.bucket}"
-  acl    = "public-read"
-}
+# # ACL for the bucket.
+# resource "aws_s3_bucket_acl" "bucket" {
+#   bucket = "${aws_s3_bucket.bucket.bucket}"
+#   acl    = "public-read"
+# }
