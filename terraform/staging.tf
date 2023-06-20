@@ -5,6 +5,6 @@ module "staging_resources" {
     environment = "staging"
     certificate_arn = var.certificate_arn
     aliases = ["staging.${var.domain_name}"]
-    domain_name = "staging.${var.domain_name}"
+    domain_name = var.domain_name
     hosted_zone_id = var.hosted_zone_id
 }
