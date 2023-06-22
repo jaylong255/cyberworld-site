@@ -1,7 +1,7 @@
 resource "aws_route53_record" "dns" {
   depends_on = [aws_cloudfront_distribution.distribution]
   zone_id    = var.hosted_zone_id
-  name       = "${var.environment}.${var.domain_name}"
+  name = var.is_production ? "${var.domain_name}" : "${var.environment}.${var.domain_name}"
   type       = "A"
   alias {
     name                   = aws_cloudfront_distribution.distribution.domain_name
