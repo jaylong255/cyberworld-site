@@ -25,19 +25,8 @@ variable "hosted_zone_id" {
     type = string
 }
 
-// The following are handled by Terraform Cloud, but the warning is irritating so I 
-// gave them empty strings as defaults.
-
-variable "AWS_ACCESS_KEY_ID" {
-  description = "AWS access key ID"
-  type        = string
-  default    = ""
+variable "is_production" {
+  description = "Whether this is a production environment"
+  type        = bool
+  default     = false
 }
-
-
-variable "AWS_SECRET_ACCESS_KEY" {
-  description = "AWS secret access key"
-  type        = string
-  default    = ""
-}
-

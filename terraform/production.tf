@@ -1,11 +1,11 @@
-module "staging_resources" {
+module "production_resources" {
     source = "./modules/static-frontend"
 
     project = var.project
-    environment = "staging"
+    environment = "production"
     certificate_arn = var.certificate_arn
-    aliases = ["staging.${var.domain_name}"]
+    aliases = [var.domain_name]
     domain_name = var.domain_name
     hosted_zone_id = var.hosted_zone_id
-    is_production = false
+    is_production = true
 }
