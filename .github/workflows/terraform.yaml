@@ -56,7 +56,10 @@ jobs:
     - name: Terraform Plan
       id: plan
       if: github.event_name == 'pull_request'
-      run: TF_VAR_certificate_arn=${{ secrets.CERTIFICATE_ARN }} terraform plan -no-color -input=false
+      run: |
+        TF_VAR_certificate_arn=${{ secrets.CERTIFICATE_ARN }} \
+        TF_VAR_hosted_zone_id=${{ secrets.HOSTED_ZONE_ID }} \
+        terraform plan -no-color -input=false
       continue-on-error: true
 
     - name: Terraform Plan Status
@@ -65,4 +68,7 @@ jobs:
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: TF_VAR_certificate_arn=${{ secrets.CERTIFICATE_ARN }} terraform apply -auto-approve -input=false
+      run: |
+        TF_VAR_certificate_arn=${{ secrets.CERTIFICATE_ARN }} \
+        TF_VAR_hosted_zone_id=${{ secrets.HOSTED_ZONE_ID }} \
+        terraform apply -auto-approve -input=false
