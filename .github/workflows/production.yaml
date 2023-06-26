@@ -2,14 +2,13 @@ name: Deploy Frontend to the Production Environment
 
 run-name: ${{ github.actor }} has triggered a PRODUCTION deployment
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    paths-ignore:
+  push:
+    branches:
+      - main
+      paths-ignore:
         - 'README.md'
         - '.github/**'
         - 'terraform/**'
-    branches:
-      - main
 
 jobs:
   deploy-dev:
