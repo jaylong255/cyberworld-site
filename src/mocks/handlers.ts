@@ -9,6 +9,5 @@ const handlers = [
       })
     );
   }),
-
 ];
 export { handlers };

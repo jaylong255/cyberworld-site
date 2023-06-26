@@ -3,11 +3,9 @@ function CyberWorldLogo() {
     <div>
       <svg
         width="300"
-        // height="347"
         viewBox="0 0 430 347"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <rect width="430" height="347" fill="url(#pattern0)" />
         <defs>
