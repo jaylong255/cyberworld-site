@@ -17,27 +17,22 @@ export const secondary = "#C47E5A";
 export const black = "#181818";
 export const white = "#FFFFFF";
 
-
 // export const
 
-declare module "@mui/material/Button" {
-}
+declare module "@mui/material/Button" {}
 
 declare module "@mui/material/styles" {
   interface TypographyVariants {
     heading_1_bold: React.CSSProperties;
-
   }
   interface TypographyVariantsOptions {
     heading_1_bold?: React.CSSProperties;
-
   }
 }
 
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     heading_1_bold: true;
-
   }
 }
 
@@ -67,7 +62,7 @@ const theme = createTheme({
       textAlign: "center",
       margin: "0px 0px 0px 0px",
       padding: "0px 0px 0px 0px",
-    }
+    },
   },
 });
 

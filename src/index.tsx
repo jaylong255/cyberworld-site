@@ -31,15 +31,15 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={theme}>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <BrowserRouter>
-              <CssBaseline />
-              <App />
-            </BrowserRouter>
-          </LocalizationProvider>
-        </ThemeProvider>
-      </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <BrowserRouter>
+            <CssBaseline />
+            <App />
+          </BrowserRouter>
+        </LocalizationProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
