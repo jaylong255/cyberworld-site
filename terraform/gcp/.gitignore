@@ -26,6 +26,9 @@ override.tf.json
 !terraform.tfvars
 !example_env.tfvars
 
+# gcp service account json
+*-sa.json
+
 # terragrunt
 .terragrunt-cache
 *.tfvars
