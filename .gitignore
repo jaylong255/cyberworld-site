@@ -121,3 +121,5 @@ dist-ssr
 
 # vercel
 .vercel
+
+*sa.json
