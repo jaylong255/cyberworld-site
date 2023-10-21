@@ -4,6 +4,7 @@ import CyberWorldLogo from "components/icons/CyberWorld";
 import { Link } from "react-router-dom";
 import GitHubLogo from "../components/icons/GitHubLogo";
 import TwitterLogo from "components/icons/TwitterLogo";
+// import TwitterLogo from "assets/images/x-green-small.png";
 import UpworkLogo from "components/icons/UpworkLogo";
 
 function Home() {
