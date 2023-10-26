@@ -23,7 +23,6 @@ function Header() {
           sx={{
             alignItems: "center",
             alignContent: "center",
-            padding: "0px 0px 0px 0px",
             margin: "0px 0px 0px 0px",
             display: "flex",
             flexDirection: "column",
