@@ -1,15 +1,15 @@
-name: TF CI/CD
+name: TF CI/CD - AWS
 on:
   push:
     paths:
-      - 'terraform/**'
-      - '.github/workflows/terraform.yaml'
+      - 'terraform/aws/**'
+      - '.github/workflows/aws.yaml'
     branches:
       - main
   pull_request:
     paths:
-      - 'terraform/**'
-      - '.github/workflows/terraform.yaml'
+      - 'terraform/aws/**'
+      - '.github/workflows/aws.yaml'
     branches:
       - main
 
@@ -19,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: terraform/
+        working-directory: terraform/aws/
 
     steps:
     - uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
       name: Cache plugin dir
       with:
         path: ~/.tflint.d/plugins
-        key: ${{ matrix.os }}-tflint-${{ hashFiles('terraform/.tflint.hcl') }}
+        key: ${{ matrix.os }}-tflint-${{ hashFiles('terraform/aws/.tflint.hcl') }}
 
     - name: Get Terraform version
       id: tf_version
