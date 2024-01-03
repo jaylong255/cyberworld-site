@@ -46,6 +46,19 @@ const theme = createTheme({
     primary: {
       main: COLOR_900,
     },
+    secondary: {
+      main: primary,
+    },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        a: {
+          color: primary,
+          textDecorationColor: primary,
+        },
+      },
+    },
   },
   typography: {
     fontFamily: primaryFontFamily,
@@ -62,6 +75,11 @@ const theme = createTheme({
       textAlign: "center",
       margin: "0px 0px 0px 0px",
       padding: "0px 0px 0px 0px",
+      "a:visted": {
+        color: primary,
+        textDecoration: "none",
+      },
+
     },
   },
 });
