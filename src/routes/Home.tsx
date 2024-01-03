@@ -20,7 +20,7 @@ function Home() {
       >
         <Typography variant="body1">Jay Long</Typography>
         <Typography variant="body1">CyberWorld Builders</Typography>
-        <Link to="/contact" sx={{}}>
+        <Link to="/contact">
           Contact.
         </Link>
       </Box>

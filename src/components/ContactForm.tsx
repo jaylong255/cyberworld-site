@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { TextField, Button, Typography, Grid } from "@mui/material";
 
+// get the contact url from the .env file
+// const contactUrl = process.env.REACT_APP_CONTACT_URL;
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,7 +20,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://your-node-backend-endpoint", {
+      const response = await fetch("http://localhost:3001/submit-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
