@@ -1,5 +1,8 @@
 # Use an official Node.js runtime as a parent image
-FROM node:14
+FROM node:16
+
+# install sendmail
+RUN apt-get update && apt-get install -y sendmail
 
 # Set the working directory in the container
 WORKDIR /usr/src/app

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { TextField, Button, Grid } from "@mui/material";
 const contactUrl = process.env.REACT_APP_CONTACT_URL;
 
+console.log(contactUrl);
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",

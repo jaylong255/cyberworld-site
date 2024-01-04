@@ -9,3 +9,13 @@ module "staging_resources" {
     hosted_zone_id = var.hosted_zone_id
     is_production = false
 }
+
+# module "staging_mailer" {
+#     source = "./modules/mailer-app"
+
+#     project = var.project
+#     environment = "staging"
+#     domain_name = var.domain_name
+#     hosted_zone_id = var.hosted_zone_id
+#     is_production = false
+# }
