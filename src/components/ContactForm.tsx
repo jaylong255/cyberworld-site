@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { TextField, Button, Grid } from "@mui/material";
+
 const contactUrl = process.env.REACT_APP_CONTACT_URL;
 
 const ContactForm = () => {
@@ -14,15 +15,18 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  console.log(contactUrl);
+
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // const contactUrl = env.REACT_APP_CONTACT_URL;
-
-    console.log(contactUrl);
-
+    if (contactUrl === undefined) {
+      console.error("URL is undefined");
+      return;
+    }
+ 
     try {
-      const response = await fetch("http://localhost:3000/submit-form", {
+      const response = await fetch(contactUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +36,7 @@ const ContactForm = () => {
 
       if (response.ok) {
         alert("Form submitted successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: ""});
       } else {
         alert("Error submitting form. Please try again.");
       }
