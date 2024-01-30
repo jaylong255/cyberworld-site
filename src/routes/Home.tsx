@@ -19,8 +19,14 @@ function Home() {
         }}
       >
         <Typography variant="body1">Jay Long</Typography>
-        <Typography variant="body1">CyberWorld Builders</Typography>
-        <Link to="/contact">Contact.</Link>
+        <Typography variant="heading_1_bold">CyberWorld Builders</Typography>
+        <Typography
+              variant="body2"
+              component={Link}
+              to="mailto:contact@cyberworldbuilders.com"
+            >
+              email me
+         </Typography>
       </Box>
     </Page>
   );

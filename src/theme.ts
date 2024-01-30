@@ -39,7 +39,7 @@ declare module "@mui/material/Typography" {
 export const primaryFontFamily = "'Ubuntu', sans-serif";
 export const secondaryFontFamily = "'Special Elite', sans-serif";
 export const regularFontWeight = 400;
-export const boldFontWeight = 700;
+export const boldFontWeight = 500;
 
 const theme = createTheme({
   palette: {
@@ -64,14 +64,14 @@ const theme = createTheme({
     fontFamily: primaryFontFamily,
     heading_1_bold: {
       fontFamily: secondaryFontFamily,
-      fontSize: "72px",
+      fontSize: "2.5rem",
       lineHeight: "120%",
       fontWeight: boldFontWeight,
     },
     body1: {
       color: primary,
       fontFamily: "Ubuntu",
-      fontSize: "1rem",
+      fontSize: "2rem",
       textAlign: "center",
       margin: "0px 0px 0px 0px",
       padding: "0px 0px 0px 0px",
@@ -80,6 +80,18 @@ const theme = createTheme({
         textDecoration: "none",
       },
 
+    },
+    body2: {
+      color: primary,
+      fontFamily: "Ubuntu",
+      fontSize: "1.5rem",
+      textAlign: "center",
+      margin: "0px 0px 0px 0px",
+      padding: "0px 0px 0px 0px",
+      "a:visted": {
+        color: primary,
+        textDecoration: "none",
+      },
     },
   },
 });
