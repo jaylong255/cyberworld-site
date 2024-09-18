@@ -24,7 +24,7 @@ function Social() {
         }}
       >
         <Link
-          to="https://github.com/jaylong255"
+          to="https://github.com/Cyberworld-builders"
           target="_blank"
           rel="noopener noreferrer"
         >
