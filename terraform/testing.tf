@@ -14,31 +14,6 @@ resource "aws_s3_bucket" "testing" {
   }
 }
 
-# resource "aws_s3_bucket_acl" "testing" {
-#   bucket = aws_s3_bucket.testing.id
-#   acl    = "public-read"
-# }
-
-# resource "aws_s3_bucket_ownership_controls" "testing" {
-#   bucket = aws_s3_bucket.testing.id
-
-#   rule {
-#     object_ownership = "BucketOwnerEnforced"
-#   }
-# }
-
-# resource "aws_s3_bucket_website_configuration" "testing" {
-#   bucket = aws_s3_bucket.testing.id
-
-#   index_document {
-#     suffix = "index.html"
-#   }
-  
-#   error_document {
-#     key = "404.html"
-#   }
-# }
-
 resource "aws_s3_bucket_public_access_block" "testing" {
   bucket = aws_s3_bucket.testing.id
 
@@ -216,7 +191,7 @@ resource "aws_route53_record" "testing" {
 resource "aws_cloudfront_function" "testing" {
   name    = "${var.project}-${local.environment}-rewrite-uri"
   runtime = "cloudfront-js-1.0"
-  comment = "Rewrite URI for ${var.project}-${local.environment} (with debugging)"
+  comment = "Rewrite URI for ${var.project}-${local.environment} (with debugging and redirect)"
   code    = <<-EOT
 function handler(event) {
   var request = event.request;
@@ -229,6 +204,18 @@ function handler(event) {
 
   // Log the incoming URI
   console.log('Incoming URI:', uri);
+  
+  // 301 redirect from page 2 to page 1
+  if (uri === '/page2' || uri === '/page2.html') {
+    console.log('Redirecting from page 2 to page 1');
+    return {
+      statusCode: 301,
+      statusDescription: 'Moved Permanently',
+      headers: {
+        'location': { value: '/page1.html' }
+      }
+    };
+  }
   
   // If the URI is the root, serve index.html
   if (uri === '/') {
