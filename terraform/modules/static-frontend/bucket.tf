@@ -16,7 +16,32 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
-resource "aws_s3_bucket_website_configuration" "bucket" {
+# Add bucket policy
+resource "aws_s3_bucket_policy" "bucket_policy" {
+  bucket = aws_s3_bucket.bucket.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid       = "AllowCloudFrontAccess"
+        Effect    = "Allow"
+        Principal = {
+          Service = "cloudfront.amazonaws.com"
+        }
+        Action   = "s3:GetObject"
+        Resource = "${aws_s3_bucket.bucket.arn}/*"
+        Condition = {
+          StringEquals = {
+            "AWS:SourceArn" = aws_cloudfront_distribution.distribution.arn
+          }
+        }
+      }
+    ]
+  })
+}
+
+resource "aws_s3_bucket_website_configuration" "bucket_website" {
   bucket = aws_s3_bucket.bucket.id
 
   index_document {
@@ -24,6 +49,6 @@ resource "aws_s3_bucket_website_configuration" "bucket" {
   }
 
   error_document {
-    key = "index.html"
+    key = "404.html"
   }
 }
