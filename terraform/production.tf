@@ -1,5 +1,5 @@
 module "production_resources" {
-    source = "./modules/static-frontend"
+    source = "git::https://github.com/jaylong255/cyberworld-site.git//terraform/modules/static-frontend?ref=v0.0.1"
 
     project = var.project
     environment = "production"
