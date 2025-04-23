@@ -196,6 +196,8 @@ resource "aws_cloudfront_function" "testing" {
 function handler(event) {
   var request = event.request;
   var uri = request.uri;
+
+  console.log('Incoming URI:', uri);
   
   // Add a custom header for debugging
   if (!request.headers['x-debug']) {
@@ -206,13 +208,52 @@ function handler(event) {
   console.log('Incoming URI:', uri);
   
   // 301 redirect from page 2 to page 1
-  if (uri === '/page2' || uri === '/page2.html') {
+  if (
+    uri === '/page2' || 
+    uri === '/page2.html' || 
+    uri === '/page2/' || 
+    uri === '/page2.html/'
+  ) {
     console.log('Redirecting from page 2 to page 1');
     return {
       statusCode: 301,
       statusDescription: 'Moved Permanently',
       headers: {
         'location': { value: '/page1.html' }
+      }
+    };
+  }
+
+    // 301 redirect from page 6 to page 1
+  if (
+    uri === '/pages/page6' || 
+    uri === '/pages/page6.html' || 
+    uri === '/pages/page6/' || 
+    uri === '/pages/page6.html/'
+  ) {
+    console.log('Redirecting from page 6 to page 1');
+    return {
+      statusCode: 301,
+      statusDescription: 'Moved Permanently',
+      headers: {
+        'location': { value: '/page1.html' }
+      }
+    };
+  }
+
+    // 301 redirect from page 7 to page 4
+  if (
+    uri === '/pages/page7' || 
+    uri === '/pages/page7.html' || 
+    uri === '/pages/page7/' || 
+    uri === '/pages/page7.html/'
+  ) {
+    console.log('Redirecting from page 7 to page 4');
+    return {
+      statusCode: 301,
+      statusDescription: 'Moved Permanently',
+      headers: {
+        'location': { value: '/pages/page4.html' }
       }
     };
   }

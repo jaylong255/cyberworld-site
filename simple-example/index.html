@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#000000"/>
+  <meta name="description" content="CyberWorld website"/>
+  <link rel="apple-touch-icon" href="/logo192.png"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <title>CyberWorld</title>
+  <script defer="defer" src="/static/js/main.js"></script>
+  <link href="/static/css/main.css" rel="stylesheet">
+</head>
+<body>
+<div id="welcome-message">
+  <h1>Welcome to Home Page</h1>
+  <nav>
+    <ul>
+      <li><a href="/page1.html">Page 1</a></li>
+      <li><a href="/page2.html">Page 2 (which should redirect to page 1)</a></li>
+      <li><a href="/page3.html">Page 3 (which doesn't exist)</a></li>
+      <li><a href="/pages/page4.html">Page 4 (which exists in a subdirectory)</a></li>
+      <li><a href="/pages/page5.html">Page 5 (which is expected in a subdirectory but doesn't exist)</a></li>
+      <li><a href="/pages/page6.html">Page 6 (which exists in a subdirectory but is being forwarded to page 1)</a></li>
+      <li><a href="/pages/page7.html">Page 7 (which exists in a subdirectory but is being forwarded to page 4)</a></li>
+    </ul>
+  </nav>
+</div>
+</body>
+</html>
